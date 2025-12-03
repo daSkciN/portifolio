@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .photo {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.header .title {
+  font-family: "Neua Machina";
+  text-align: center;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.information p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+.information p::before {
+  content: " ";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0.5rem;
+}
+
+.information .job::before {
+  background-image: url("/assets/img/icons/job.svg");
+}
+
+.information .location::before {
+  background-image: url("/assets/img/icons/location.svg");
+}
+
+.information .zap::before {
+  background-image: url("/assets/img/icons/zap.svg");
+}
+
+.information .email::before {
+  background-image: url("/assets/img/icons/email.svg");
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    display: grid;
+    grid-template-areas:
+      "photo title"
+      "photo information";
+  }
+
+  .header .photo {
+    grid-area: photo;
+    margin: auto;
+  }
+
+  .header .title {
+    grid-area: title;
+    text-align: start;
+  }
+
+  .header .information {
+    grid-area: information;
+  }
+}
+
